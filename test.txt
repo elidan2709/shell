@@ -1,0 +1,28 @@
+echo -----TESTS-----
+
+false
+true
+grep shell_Daniel.c  malloc
+grep malloc shell_Daniel.c
+ls | ls | ls 
+ls ; ; pwd
+||||| pwd
+date ; sleep 2 | sleep 2 | sleep 2 ; date
+date ; sleep 2 ; sleep 2 ; sleep 2 ; date
+     ls |         cat| wc      
+ls | cat | grep .c | wc | ls | cat | grep .c
+echo -----expressions with brackets-----
+  (   ls )|         cat| tail -2     
+(du ; pwd ; ls)|head -5 
+(   du ;pwd ;ls ) | cat     | head -5 
+du ; ((ls | grep a) ; (ls | wc))
+du ; ((ls | grep a) ; (ls | wc)) | cat
+echo -----expressions with redirections-----
+ls >file
+cat< test.txt
+ls    >>  file
+grep .c < file
+grep .c < file> file2
+echo -----The end of tests-----
+cat file ; cat file2
+rm -f file2 file
